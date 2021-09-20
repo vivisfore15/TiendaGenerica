@@ -16,5 +16,6 @@ con.Conecta();*/
 
 <a href="MenuPrincipal.jsp">Ingresar</a>
 <h1>hola sufriendo con git hub</h1>
+<h1>hola Tranquilidad total con git hub</h1>
 </body>
 </html>
