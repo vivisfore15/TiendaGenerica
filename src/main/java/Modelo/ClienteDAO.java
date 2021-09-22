@@ -81,15 +81,15 @@ public class ClienteDAO {
 		return dat;
 	}
     
-    public int actulizar(Usuarios_DTO usdto) {
+    public int actulizar(ClienteDTO cli) {
 		int x=0;
 	  try {
-		ps=conecta.prepareStatement("UPDATE clientes Set nomusu=?,clave=?,rol=?,estado=? WHERE documento=?");
-		ps.setString(1, usdto.getNombre_Usuario());
-		ps.setString(2,usdto.getEmail_Usuario());
-		ps.setString(3, usdto.getPassword());
-		ps.setString(4, usdto.getUsuario());
-		ps.setLong(5, usdto.getCedula_Usuario());
+		ps=conecta.prepareStatement("UPDATE clientes Set direccion_cliente=?,email_cliente=?,nombre_cliente=?,	telefono_cliente=? WHERE cedula_cliente=?");
+		ps.setString(1, cli.getDireccion());
+		ps.setString(2,cli.getEmail());
+		ps.setString(3, cli.getNombre());
+		ps.setString(4, cli.getTelefono());
+		ps.setString(5, cli.getTelefono());
 		x= ps.executeUpdate();
 		
 	} catch (SQLException e) {
