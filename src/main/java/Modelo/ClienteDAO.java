@@ -5,37 +5,33 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 import javax.swing.JOptionPane;
 
 import Controlador.Conexion;
 
-
-public class UsuariosDAO {
-	
-	
+public class ClienteDAO {
 	PreparedStatement ps=null;
 	ResultSet res=null;
 	Conexion con= new Conexion();
 	Connection conecta=con.Conecta();
 
 	
-	public boolean Inserta_Usuario(Usuarios_DTO u){
+	public boolean Inserta_Cliente(ClienteDTO u){
 
 		boolean resultado=false;
-		Usuarios_DTO usu=null;
+		ClienteDTO usu=null;
 		try{
-		usu= Buscar_Usuario(u.getCedula_Usuario());
+		usu=  buscarcliente(u);
 		if(usu!=null) {
 			JOptionPane.showMessageDialog(null, "El Usuario ya existe...");
 		}else {
-		String sql="Insert Into usuarios value(?,?,?,?,?)";
+		String sql="Insert Into clientes value(?,?,?,?,?)";
 		ps =conecta.prepareStatement(sql);
-		ps.setLong(1, u.getCedula_Usuario());
-		ps.setString(2, u.getEmail_Usuario());
-		ps.setString(3, u.getNombre_Usuario());
-		ps.setString(4, u.getUsuario());
-		ps.setString(5, u.getPassword());
+		ps.setLong(1, u.getCedula());
+		ps.setString(2, u.getDireccion());
+		ps.setString(3, u.getEmail());
+		ps.setString(4, u.getNombre());
+		ps.setString(5, u.getTelefono());
 		resultado=ps.executeUpdate()>0;
 		}
 		}catch(SQLException ex){
@@ -44,19 +40,19 @@ public class UsuariosDAO {
 		return resultado;
 		}  
 	
-    public Usuarios_DTO Buscar_Usuario(long cedula){
+    public ClienteDTO buscarcliente(ClienteDTO cli){
 
-    Usuarios_DTO u=null;
+    ClienteDTO u=null;
     
     try{
-    String sql="select * from usuarios where cedula_usuario=?";
+    String sql="select * from clientes where cedula_usuario=?";
     ps =conecta.prepareStatement(sql);
-    ps.setLong(1, cedula);
+    ps.setLong(1, cli.getCedula());
     res=ps.executeQuery();
     
     while(res.next()){
 
-       u= new Usuarios_DTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
+       u= new ClienteDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
 
      }
     }catch(SQLException ex){
@@ -64,13 +60,13 @@ public class UsuariosDAO {
     }
     return u;
     }
-	
-    public boolean eliminarusuario(Usuarios_DTO us) {
+    
+    public boolean eliminarcliente(ClienteDTO cli) {
 		int x;
 		boolean dat=false;
 		try {
-			ps=conecta.prepareStatement("DELETE FROM usuario WHERE documento=?");
-			ps.setLong(1,us.getCedula_Usuario() );
+			ps=conecta.prepareStatement("DELETE FROM clientes WHERE documento=?");
+			ps.setLong(1,cli.getCedula() );
 			x=ps.executeUpdate();
 			
 			if(x>0) {
@@ -88,7 +84,7 @@ public class UsuariosDAO {
     public int actulizar(Usuarios_DTO usdto) {
 		int x=0;
 	  try {
-		ps=conecta.prepareStatement("UPDATE usuario Set nomusu=?,clave=?,rol=?,estado=? WHERE documento=?");
+		ps=conecta.prepareStatement("UPDATE clientes Set nomusu=?,clave=?,rol=?,estado=? WHERE documento=?");
 		ps.setString(1, usdto.getNombre_Usuario());
 		ps.setString(2,usdto.getEmail_Usuario());
 		ps.setString(3, usdto.getPassword());
@@ -106,4 +102,5 @@ public class UsuariosDAO {
     
     
     
+	
 }
