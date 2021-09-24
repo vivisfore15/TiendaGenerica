@@ -39,7 +39,7 @@
 
     <main>
     <section>
-     <div id="u"><a  href="usuarios.jsp">Usuarios</a></div>
+     <div id="u"><a  href="Usuarios.jsp">Usuarios</a></div>
       <div id="c"><a href="clientes.jsp">Clientesssss</a></div>
       <div id="p"><a href="">Proveedores</a></div>
       <div id="v"><a href="">Productos</a></div>
