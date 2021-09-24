@@ -53,15 +53,16 @@ JOptionPane.showMessageDialog(null, "Datos: "+cedula+" - "+nombre+" - "+correo+"
       <section>
           <fieldset>
               <legend>Gestión Usuarios</legend>
-                <form action="">
-                    <input type="text" name="cedula" value="<%=cedula %>">
-                    <input type="text" name="" value="<%=nombre %>" placeholder="nombre">
-                    <input type="text" name="" value="<%=correo %>" placeholder="texto">
-                    <input type="text" name="" value="<%=cedula %>"placeholder="texto">
-                    <input type="submit" name="" value="insertar" placeholder="texto">
-                    <input type="submit" name="" value="Actualizar" placeholder="texto">
-                    <input type="submit" name="" value="Consultar" placeholder="texto">
-                    <input type="submit" name="" value="Eliminar" placeholder="texto">
+                <form action="Usuarios" method="post">
+                    <input type="text" name="cedula" value="<%=cedula %>" placeholder="Cedula">
+                    <input type="text" name="nombre" value="<%=nombre %>" placeholder="Nombre">
+                    <input type="email" name="correo" value="<%=correo %>" placeholder="Correo">
+                    <input type="text" name="usuario" value="<%=usuario %>" placeholder="Usuario">
+                    <input type="password" name="pass" value="<%=pass %>" placeholder="*****">
+                    <input type="submit" name="insertar" value="insertar" placeholder="texto">
+                    <input type="submit" name="actualizar" value="Actualizar" placeholder="texto">
+                    <input type="submit" name="consultar" value="Consultar" placeholder="texto">
+                    <input type="submit" name="eliminar" value="Eliminar" placeholder="texto">
 
                 </form>
 
