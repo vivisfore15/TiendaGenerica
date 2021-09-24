@@ -1,4 +1,3 @@
-<%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,19 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-<%!long cedula=0;
-String nombre="",correo="",usuario="",pass=""; %>
-<%
-if(request.getParameter("cedula")!=null)
-{
-cedula= Long.parseLong(request.getParameter("cedula"));
-nombre= request.getParameter("nombre");
-correo= request.getParameter("correo");
-usuario = request.getParameter("usuario");
-pass = request.getParameter("pass");
-JOptionPane.showMessageDialog(null, "Datos: "+cedula+" - "+nombre+" - "+correo+" - "+usuario+" - "+pass);
-}
-%>
     <header id="contenedortitulo"   class="headerclass">
         <div class="logotitulo">
           <h1 id="titulop"  class="titulop">Mascotas felices </h1>
@@ -52,12 +38,13 @@ JOptionPane.showMessageDialog(null, "Datos: "+cedula+" - "+nombre+" - "+correo+"
       </header>
       <section>
           <fieldset>
-              <legend>Gestión Usuarios</legend>
+              <legend>Gestión Clientes</legend>
                 <form action="">
-                    <input type="text" name="cedula" value="<%=cedula %>">
-                    <input type="text" name="" value="<%=nombre %>" placeholder="nombre">
-                    <input type="text" name="" value="<%=correo %>" placeholder="texto">
-                    <input type="text" name="" value="<%=cedula %>"placeholder="texto">
+                    <input type="text" name="" value="" placeholder="texto">
+                    <input type="text" name="" value="" placeholder="texto">
+                    <input type="text" name="" value="" placeholder="texto">
+                    <input type="text" name="" value="" placeholder="texto">
+                    <input type="text" name="" value="" placeholder="texto">
                     <input type="submit" name="" value="insertar" placeholder="texto">
                     <input type="submit" name="" value="Actualizar" placeholder="texto">
                     <input type="submit" name="" value="Consultar" placeholder="texto">
