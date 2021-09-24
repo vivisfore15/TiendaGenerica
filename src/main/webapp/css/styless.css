@@ -44,7 +44,7 @@ header{
    .logo{
        width: 70px;
        height: 70px;
-       background-image: url('../ima/t3.jpg');
+       background-image: url('../ima/z3.jpeg');
        background-size: cover;
        background-repeat: no-repeat;
        border-radius: 50%;
@@ -151,26 +151,26 @@ section div{
 }
 
 #u{
-    background-image: url(../ima/shopping-1900998_1920.jpg);
+    background-image: url(../ima/z1.jpeg);
     background-size: cover;
 }
 
 
 #u{
-    background-image: url(../ima/pug-1209129_1920.jpg);
+    background-image: url(../ima/zr.jpeg);
     background-size: cover;
 }
 
 
 
 #c{
-    background-image: url(../ima/squirrel-4327363_1920.jpg);
+    background-image: url(../ima/zeca.jpeg);
     background-size: cover;
 }
 
 
 #p{
-    background-image: url(../ima/squirrel-5401265_1920.jpg);
+    background-image: url(../ima/t3.jpg);
     background-size: cover;
 }
 
@@ -181,13 +181,9 @@ section div{
 }
 
 
-#pr{
-    background-image: url(../ima/shopping-1900998_1920.jpg);
-    background-size: cover;
-}
-
-
 #d{
-    background-image: url(../ima/shopping-1900998_1920.jpg);
+    background-image: url(../ima/squirrel-5401265_1920.jpg);
     background-size: cover;
 }
+
+

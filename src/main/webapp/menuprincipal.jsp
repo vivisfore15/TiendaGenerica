@@ -40,12 +40,11 @@
     <main>
     <section>
      <div id="u"><a  href="Usuarios.jsp">Usuarios</a></div>
-      <div id="c"><a href="clientes.jsp">Clientesssss</a></div>
-      <div id="p"><a href="">Proveedores</a></div>
-      <div id="v"><a href="">Productos</a></div>
-      <div id="d"><a href="">Ventas</a></div>
-      <div id="pr"><a href="">Detalle de venta</a></div>
-
+      <div id="c"><a href="clientes.jsp">Clientes</a></div>
+      <div id="p"><a href="proveedores.jsp">Proveedores</a></div>
+      <div id="v"><a href="productos.jsp">Productos</a></div>
+      <div id="d"><a href="ventas.jsp">Ventas</a></div>
+    
     </section>
 </main>
 </body>
