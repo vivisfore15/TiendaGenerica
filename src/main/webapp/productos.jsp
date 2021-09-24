@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/clientes.css">
 </head>
 <body>
 <header id="contenedortitulo"   class="headerclass">
@@ -35,7 +36,7 @@
       </header>
       <section>
           <fieldset>
-              <legend>Gestión Usuarios</legend>
+              <legend>Gestión Productos</legend>
                 <form action="">
                     
                     <input type="file" name="" value=""placeholder="Nombre del archivo">

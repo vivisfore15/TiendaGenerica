@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/clientes.css">
 </head>
 <body>
 <header id="contenedortitulo"   class="headerclass">
