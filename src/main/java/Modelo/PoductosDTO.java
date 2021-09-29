@@ -9,7 +9,7 @@ private double preciocompra;
 private double precioventa;
 public PoductosDTO(long codigoproducto, double ivacompra, long nitproveedor, String nombreproducto, double preciocompra,
 		double precioventa) {
-	super();
+
 	this.codigoproducto = codigoproducto;
 	this.ivacompra = ivacompra;
 	this.nitproveedor = nitproveedor;
@@ -17,6 +17,18 @@ public PoductosDTO(long codigoproducto, double ivacompra, long nitproveedor, Str
 	this.preciocompra = preciocompra;
 	this.precioventa = precioventa;
 }
+
+
+
+
+public PoductosDTO(long codigoproducto) {
+	super();
+	this.codigoproducto = codigoproducto;
+}
+
+
+
+
 public long getCodigoproducto() {
 	return codigoproducto;
 }

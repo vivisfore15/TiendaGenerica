@@ -11,96 +11,65 @@ import Controlador.Conexion;
 
 public class ClienteDAO {
 	PreparedStatement ps=null;
-	ResultSet res=null;
+	ResultSet rs=null;
 	Conexion con= new Conexion();
-	Connection conecta=con.Conecta();
-
+	Connection cnn=con.Conecta();
+	ClienteDTO clidto;
 	
 	public boolean Inserta_Cliente(ClienteDTO u){
 
 		boolean resultado=false;
-		ClienteDTO usu=null;
+		//ClienteDTO usu=null;
 		try{
-		usu=  buscarcliente(u);
-		if(usu!=null) {
+		//usu=  buscarcliente(u);
+		//if(usu!=null) {
 			JOptionPane.showMessageDialog(null, "El Usuario ya existe...");
-		}else {
-		String sql="Insert Into clientes value(?,?,?,?,?)";
-		ps =conecta.prepareStatement(sql);
+		//}else {
+	    ps =cnn.prepareStatement("Insert Into clientes value(?,?,?,?,?)");
 		ps.setLong(1, u.getCedula());
 		ps.setString(2, u.getDireccion());
 		ps.setString(3, u.getEmail());
 		ps.setString(4, u.getNombre());
 		ps.setString(5, u.getTelefono());
 		resultado=ps.executeUpdate()>0;
-		}
+		//}
 		}catch(SQLException ex){
 		 JOptionPane.showMessageDialog(null, "Error al Insertar" +ex);
 		}
 		return resultado;
-		}  
+		} 
 	
-    public ClienteDTO buscarcliente(ClienteDTO cli){
-
-    ClienteDTO u=null;
-    
-    try{
-    String sql="select * from clientes where cedula_usuario=?";
-    ps =conecta.prepareStatement(sql);
-    ps.setLong(1, cli.getCedula());
-    res=ps.executeQuery();
-    
-    while(res.next()){
-
-       u= new ClienteDTO(res.getLong(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5));
-
-     }
-    }catch(SQLException ex){
-     JOptionPane.showMessageDialog(null,"Error al Consultar" +ex);
-    }
-    return u;
-    }
-    
-    public boolean eliminarcliente(ClienteDTO cli) {
-		int x;
-		boolean dat=false;
+	  public ClienteDTO consultarcliente(ClienteDTO cli) {
 		try {
-			ps=conecta.prepareStatement("DELETE FROM clientes WHERE documento=?");
-			ps.setLong(1,cli.getCedula() );
-			x=ps.executeUpdate();
-			
-			if(x>0) {
-			dat=true;	
+			ps=cnn.prepareStatement("SELECT * FROM clientes WHERE cedula_cliente=?");
+			ps.setLong(1, cli.getCedula());
+			rs=ps.executeQuery();
+			if(rs.next()){
+			 clidto=new ClienteDTO(rs.getLong(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 			}
-		} catch (SQLException e) {
 			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+				  
+		return clidto;  
+	  }
+	
+	public boolean eliminar(ClienteDTO cli) {
+		boolean res=false;
+		try {
+			ps=cnn.prepareStatement("DELETE FROM clientes WHERE cedula_cliente=?");
+		     ps.setLong(1, cli.getCedula());
+		     
+		     res=ps.executeUpdate()>0;
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
-		return dat;
+		return res;
 	}
-    
-    public int actulizar(ClienteDTO cli) {
-		int x=0;
-	  try {
-		ps=conecta.prepareStatement("UPDATE clientes Set direccion_cliente=?,email_cliente=?,nombre_cliente=?,	telefono_cliente=? WHERE cedula_cliente=?");
-		ps.setString(1, cli.getDireccion());
-		ps.setString(2,cli.getEmail());
-		ps.setString(3, cli.getNombre());
-		ps.setString(4, cli.getTelefono());
-		ps.setString(5, cli.getTelefono());
-		x= ps.executeUpdate();
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	  
-	  return x;
-	}
-    
-    
-    
 	
+   
 }

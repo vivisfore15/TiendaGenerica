@@ -9,7 +9,7 @@ public class Conexion {
 	    public String db="TiendaGenerica";
 	    public String url="jdbc:mysql://localhost:3306/"+db;
 	    public String user="root";
-	    public String pass="admi123";
+	    public String pass="";
 	    Connection conec=null;
 
 

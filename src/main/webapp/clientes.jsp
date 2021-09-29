@@ -10,6 +10,19 @@
     <title>Document</title>
 </head>
 <body>
+<%
+String ced="",nom="",dir="",cor="",tel="";
+
+if(request.getParameter("c")!=null){
+ced=request.getParameter("c");
+nom=request.getParameter("n");
+dir=request.getParameter("d");
+cor=request.getParameter("co");
+tel=request.getParameter("t");
+}
+
+%>
+
     <header id="contenedortitulo"   class="headerclass">
         <div class="logotitulo">
           <h1 id="titulop"  class="titulop">Mascotas felices </h1>
@@ -30,30 +43,40 @@
                  
               </ul>
         </nav>
-        
-          
-              
-      
+       
     
       </header>
       <section>
           <fieldset>
               <legend>Gestión Clientes</legend>
-                <form action="">
-                    <input type="text" name="" value="" placeholder="texto">
-                    <input type="text" name="" value="" placeholder="texto">
-                    <input type="text" name="" value="" placeholder="texto">
-                    <input type="text" name="" value="" placeholder="texto">
-                    <input type="text" name="" value="" placeholder="texto">
-                    <input type="submit" name="" value="insertar" placeholder="texto">
-                    <input type="submit" name="" value="Actualizar" placeholder="texto">
-                    <input type="submit" name="" value="Consultar" placeholder="texto">
-                    <input type="submit" name="" value="Eliminar" placeholder="texto">
+                <form action="Cliente" method="POST">
+                    <input type="text" name="ced" value="<%=ced%>" placeholder="texto">
+                    <input type="text" name="dir" value="<%=dir%>" placeholder="texto">
+                    <input type="text" name="ema" value="<%=cor%>" placeholder="texto">
+                    <input type="text" name="nom" value="<%=nom%>" placeholder="texto">
+                    <input type="text" name="tel" value="<%=tel%>" placeholder="texto">
+                    <input type="submit" name="btnisn" value="insertar" >
+                    <input type="submit" name="" value="Actualizar" >
+                    <input type="submit" name="btncon" value="Consultar" >
+                    <input type="submit" name="btneli" value="Eliminar" >
 
                 </form>
 
 
           </fieldset>
+          
+          <table>
+          <tr>
+	          <td><%=ced%></td>
+	          <td><%=dir%></td>
+	          <td><%=cor%></td>
+	          <td><%=nom%></td>
+	          <td><%=tel%></td>
+          
+          </tr>
+          
+          
+          </table>
       </section>
 </body>
 </html>
