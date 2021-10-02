@@ -11,6 +11,8 @@ $(document).ready(function(){
 		
 		
 	});
+	
+	
 	$('.cantidad1').on('keyup',function(){
 	
 	let cat1=$('.cantidad1').val();
