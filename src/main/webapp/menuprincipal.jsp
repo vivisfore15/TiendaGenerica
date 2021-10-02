@@ -10,6 +10,8 @@
     <title>Document</title>
 </head>
 <body>
+
+
   <header id="contenedortitulo"   class="headerclass">
     <div class="logotitulo">
       <h1 id="titulop"  class="titulop">Mascotas felices </h1>
@@ -36,7 +38,7 @@
   
 
   </header>
-
+<input type="text" name="codigo" value="${vs.getCedula_Usuario()}"  >
     <main>
     <section>
      <div id="u"><a  href="Usuarios.jsp">Usuarios</a></div>

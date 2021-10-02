@@ -34,8 +34,8 @@ public class UsuariosDAO {
 		ps.setLong(1, u.getCedula_Usuario());
 		ps.setString(2, u.getEmail_Usuario());
 		ps.setString(3, u.getNombre_Usuario());
-		ps.setString(4, u.getUsuario());
-		ps.setString(5, u.getPassword());
+		ps.setString(5, u.getUsuario());
+		ps.setString(4, u.getPassword());
 		resultado=ps.executeUpdate()>0;
 		}
 		}catch(SQLException ex){

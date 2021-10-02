@@ -2,27 +2,19 @@
 <%@page import="Modelo.ClienteDTO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/stylesventas.css">
-
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="js/consultar.js"></script>
 </head>
 <body>
 
 
-
-
-
-
-<h1>hola:${cliente.getCedula()}</h1>
-
-
-
-
-   
 <header id="contenedortitulo"   class="headerclass">
         <div class="logotitulo">
           <h1 id="titulop"  class="titulop">Mascotas felices </h1>
@@ -55,8 +47,8 @@
                 <form action="PruebaVenta" method="post">
                     <input type="text" name="cedula" value="${cliente.getCedula()}" placeholder="cedula">
                     <input type="text" name="nombre" value="${cliente.getNombre()}" placeholder="nombre">
-                    <input type="submit" name="confirmar" value="confirmar" >
-                    
+                    <input type="submit" name="confirmar"  >
+                   
 <table>
     <tbody>
         <tr>
@@ -69,43 +61,45 @@
 
 
         <tr>
-            <td><input type="number" name="codigo" value="${producto.getCodigoproducto()}"  ></td>
+            <td><input type="text" name="codigo" value="${producto.getCodigoproducto()}"  ></td>
             <td> <input type="submit" name="conpro" value="confirmar" ></td>
             <td> <input type="text" class="nombre" name="n2" value="${producto.getNombreproducto()}"  ></td>
-            <td> <input type="number" class="cantidad" name="can1" value=""  ></td>
-            <td> <input type="number" name="precio" value="${producto.getPreciocompra()}"  ></td>
-
+            <td> <input type="text" class="cantidad" id="cantidad" name="can"   ></td>
+            <td> <input type="text" class="pre" id="pre" name="precio" value="${producto.getPrecioventa()}"  ></td>
+                
         </tr>
         <tr>
-            <td><input type="number" name="codigo" value="${producto1.getCodigoproducto()}"  ></td>
-            <td> <input type="submit" name="conpro1" value="confirmar" ></td>
+            <td><input type="text" name="codigo1" value="${producto1.getCodigoproducto()}"  ></td>
+            <td> <input type="submit" name="conpro1"  ></td>
             <td> <input type="text" class="nombre" name="n2" value="${producto1.getNombreproducto()}"  ></td>
-            <td> <input type="number" class="cantidad" name="can" value=""  ></td>
-            <td> <input type="number" name="precio1" value="${producto1.getPreciocompra()}"  ></td>
+            <td> <input type="text" class="cantidad1"  id="cantidad1" name="can1"  ></td>
+            <td> <input type="text" class="pre1"  id="pre1" name="precio1" value="${producto1.getPrecioventa()}"  ></td>
 
         </tr>
         <tr>
-           <td><input type="number" name="codigo" value="${producto2.getCodigoproducto()}"  ></td>
-            <td> <input type="submit" name="conpro2" value="confirmar" ></td>
+           <td><input type="text" name="codigo2" value="${producto2.getCodigoproducto()}"  ></td>
+            <td> <input type="submit" name="conpro2"  ></td>
             <td> <input type="text" class="nombre" name="n2" value="${producto2.getNombreproducto()}"  ></td>
-            <td> <input type="number" class="cantidad" name="precio1" value=""  ></td>
-            <td> <input type="number" name="precio2" value="${producto2.getPreciocompra()}"  ></td>
+            <td> <input type="text" class="cantidad2" id="cantidad2" name="can2" ></td>
+            <td> <input type="text" class="pre2"  id="pre2" name="precio2" value="${producto2.getPrecioventa()}"  ></td>
 
         </tr>
+        
         <tr><td class="ult" colspan="5"><input type="submit" name="total" value="Enviar venta"></td></tr>
         
     </tbody>
-    </tbody>
+    
 </table>
+   
+<input type="hidden" name="cu" value="${vs.getCedula_Usuario()}"  >
 
-
-
-                               
+                   
 
 </form>
 
 
 </fieldset>
+
       </section>
 </body>
 </html>

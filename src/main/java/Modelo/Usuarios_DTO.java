@@ -20,6 +20,13 @@ public class Usuarios_DTO {
 	}
 
 
+	public Usuarios_DTO(String usuario, String password) {
+		super();
+		Usuario = usuario;
+		Password = password;
+	}
+
+
 	public long getCedula_Usuario() {
 		return Cedula_Usuario;
 	}

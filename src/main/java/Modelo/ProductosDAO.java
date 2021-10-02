@@ -18,7 +18,7 @@ public class ProductosDAO {
 	
 	
 	
-	 public PoductosDTO consultarcliente(PoductosDTO pro) {
+	 public PoductosDTO consultarproducto(PoductosDTO pro) {
 			try {
 				ps=cnn.prepareStatement("SELECT * FROM productos WHERE codigo_producto=?");
 				ps.setLong(1, pro.getCodigoproducto());

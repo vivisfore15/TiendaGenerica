@@ -1,28 +1,24 @@
 package Modelo;
 
 public class VentasDTO {
-private long codigoventa;
+
 private long cedula;
 private long Cedula_Usuario;
 private double ivaventa;
 private double totalventa;
 private double valorventa;
-public VentasDTO(long codigoventa, long cedula, long cedula_Usuario, double ivaventa, double totalventa,
+public VentasDTO( long cedula, long cedula_Usuario, double ivaventa, double totalventa,
 		double valorventa) {
 	super();
-	this.codigoventa = codigoventa;
+	
 	this.cedula = cedula;
 	Cedula_Usuario = cedula_Usuario;
 	this.ivaventa = ivaventa;
 	this.totalventa = totalventa;
 	this.valorventa = valorventa;
 }
-public long getCodigoventa() {
-	return codigoventa;
-}
-public void setCodigoventa(long codigoventa) {
-	this.codigoventa = codigoventa;
-}
+
+
 public long getCedula() {
 	return cedula;
 }
